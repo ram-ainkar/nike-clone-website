@@ -1,3 +1,4 @@
+import CartSidebar from "@/components/CartSidebar";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Toaster } from "@/components/ui/toaster";
 import { AuthProvider } from "@/contexts/AuthContext";
@@ -59,6 +60,7 @@ export default function RootLayout({
           >
             <ThemeToggle />
             {children}
+            <CartSidebar />
             <Toaster />
           </ThemeProvider>
         </AuthProvider>

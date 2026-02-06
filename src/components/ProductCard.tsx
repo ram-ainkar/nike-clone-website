@@ -57,7 +57,7 @@ export default function ProductCard({ product }: ProductCardProps) {
       whileHover={{ y: -5 }}
       transition={{ duration: 0.3 }}
     >
-      <Link href={`/product/${product.id}`} className="block group">
+      <Link href={`/products/${product.id}`} className="block group">
         <div className="relative overflow-hidden rounded-lg bg-muted">
           {/* Product Image */}
           <div className="aspect-square relative overflow-hidden">
