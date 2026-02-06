@@ -1,0 +1,166 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String        @id @default(cuid())
+  email         String        @unique
+  name          String?
+  password      String?
+  phone         String?
+  address       String?
+  resetToken    String?
+  resetTokenExpires DateTime?
+  orders        Order[]
+  reviews       Review[]
+  wishlist      WishlistItem[]
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+}
+
+model Product {
+  id            String        @id @default(cuid())
+  title         String
+  description   String?
+  price         Float
+  comparePrice  Float?
+  image         String
+  images        ProductImage[]
+  category      String
+  subcategory   String?
+  brand         String?
+  stock         Int           @default(0)
+  rating        Float         @default(0)
+  reviewCount   Int           @default(0)
+  featured      Boolean       @default(false)
+  variants      ProductVariant[]
+  reviews       Review[]
+  wishlistItems WishlistItem[]
+  orderItems    OrderItem[]
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  @@index([category])
+  @@index([featured])
+}
+
+model ProductImage {
+  id        String   @id @default(cuid())
+  productId String
+  url       String
+  alt       String?
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+}
+
+model ProductVariant {
+  id        String   @id @default(cuid())
+  productId String
+  size      String?
+  color     String?
+  sku       String?  @unique
+  stock     Int      @default(0)
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+}
+
+model Review {
+  id        String   @id @default(cuid())
+  productId String
+  userId    String?
+  name      String
+  email     String?
+  rating    Int
+  comment   String?
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  user      User?    @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([productId])
+}
+
+model WishlistItem {
+  id        String   @id @default(cuid())
+  userId    String
+  productId String
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+
+  @@unique([userId, productId])
+  @@index([userId])
+}
+
+model Order {
+  id              String       @id @default(cuid())
+  userId          String?
+  customerName    String
+  customerEmail   String
+  customerPhone   String?
+  customerAddress String
+  shippingCity    String?
+  shippingState   String?
+  shippingZip     String?
+  shippingCountry String?      @default("US")
+  paymentMethod   String?
+  paymentId       String?
+  total           Float
+  subtotal        Float
+  shipping        Float         @default(0)
+  tax             Float         @default(0)
+  status          String       @default("pending")
+  trackingNumber  String?
+  items           OrderItem[]
+  user            User?        @relation(fields: [userId], references: [id])
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
+
+  @@index([userId])
+  @@index([status])
+}
+
+model OrderItem {
+  id        String   @id @default(cuid())
+  orderId   String
+  productId String
+  variantId String?
+  quantity  Int
+  price     Float
+  size      String?
+  color     String?
+  order     Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  product   Product  @relation(fields: [productId], references: [id])
+}
+
+model Coupon {
+  id            String   @id @default(cuid())
+  code          String   @unique
+  discountType  String   // percentage, fixed
+  discountValue Float
+  minOrderAmount Float?
+  maxUses       Int?
+  usedCount     Int      @default(0)
+  expiresAt     DateTime?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model Post {
+  id        String   @id @default(cuid())
+  title     String
+  content   String?
+  published Boolean  @default(false)
+  authorId  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
