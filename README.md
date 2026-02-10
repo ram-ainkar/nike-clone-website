@@ -187,7 +187,7 @@ A cinematic, Nike-inspired e-commerce website with shopping cart, checkout, admi
 
 ---
 
-## 🎨 Design & UX Features
+## 🎨 Design & UX  Features
 
 ### Navigation
 - Shop link in top navigation
