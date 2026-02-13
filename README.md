@@ -16,7 +16,7 @@ A cinematic, Nike-inspired e-commerce website with shopping cart, checkout, admi
 - **Change Password** - Update security
 - **Persistent Sessions** - Login state saved to localStorage
 
-### 🛒 Shopping Experience
+### 🛒  Shopping Experience
 - **Shopping Cart** - Sidebar cart with add/remove/quantity controls
 - **Cart Persistence** - Saved to localStorage
 - **Real-time Total Calculation** - Auto-updates on changes
@@ -39,7 +39,7 @@ A cinematic, Nike-inspired e-commerce website with shopping cart, checkout, admi
 - **Coupon Management** - Create discount codes
 - **Featured Products** - Mark products as featured
 
-### 🔍 Product Discovery
+### 🔍  Product Discovery
 - **Products Page** (`/products`) - Browse all products
 - **Product Search** (`/search`) - Real-time search
 - **Product Filters** - Category, price range, sort options
@@ -49,7 +49,7 @@ A cinematic, Nike-inspired e-commerce website with shopping cart, checkout, admi
 - **Ratings Display** - 5-star ratings with count
 - **Multiple Images** - Product gallery with thumbnails
 
-### ❤️ Wishlist
+### ❤️  Wishlist
 - **Wishlist Toggle** - Heart icon to add/remove
 - **Wishlist Badge** - Count indicator
 - **Persistent Wishlist** - Saved to localStorage
@@ -62,7 +62,7 @@ A cinematic, Nike-inspired e-commerce website with shopping cart, checkout, admi
 - **Review Count** - Total review count display
 - **Product Rating Display** - Stars + count
 
-### 🎁 Product Gallery
+### 🎁  Product Gallery
 - **Multiple Images** - Thumbnail image gallery
 - **Main Image Display** - Large product image
 - **Image Navigation** - Click thumbnails to switch images
@@ -187,7 +187,7 @@ A cinematic, Nike-inspired e-commerce website with shopping cart, checkout, admi
 
 ---
 
-## 🎨 Design & UX  Features
+## 🎨  Design & UX  Features
 
 ### Navigation
 - Shop link in top navigation
