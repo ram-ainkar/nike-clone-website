@@ -1,7 +1,7 @@
 
 # Nike-Inspired E-Commerce Website - Complete Feature List
 
-## 🎯 Project Overview
+## 🎯  Project Overview
 
 A cinematic, Nike-inspired e-commerce website with shopping cart, checkout, admin panel, user accounts, and advanced features.
 
