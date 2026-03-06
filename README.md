@@ -126,7 +126,7 @@ A cinematic, Nike-inspired e-commerce website with shopping cart, checkout, admi
 
 ---
 
-## 🔌 New API Endpoints
+## 🔌New API Endpoints
 
 | Endpoint | Method | Description |
 |----------|--------|-------------|
@@ -144,7 +144,7 @@ A cinematic, Nike-inspired e-commerce website with shopping cart, checkout, admi
 
 ---
 
-## 🗄️ Database Models (Prisma)
+## 🗄️Database Models (Prisma)
 
 ### User
 - Email, password, name, phone, address
