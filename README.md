@@ -5,9 +5,9 @@
 
 A cinematic, Nike-inspired e-commerce website with shopping cart, checkout, admin panel, user accounts, and advanced features.
 
-## ✅ All Features Implemented
+## ✅All Features Implemented
 
-### 🔐 Authentication System
+### 🔐Authentication System
 - **Login Page** (`/login`)
 - **Register Page** (`/register`)
 - **User Profile** (`/profile`) - View order history
