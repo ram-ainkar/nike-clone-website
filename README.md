@@ -16,7 +16,7 @@ A cinematic, Nike-inspired e-commerce website with shopping cart, checkout, admi
 - **Change Password** - Update security
 - **Persistent Sessions** - Login state saved to localStorage
 
-### 🛒  Shopping Experience
+###🛒  Shopping Experience
 - **Shopping Cart** - Sidebar cart with add/remove/quantity controls
 - **Cart Persistence** - Saved to localStorage
 - **Real-time Total Calculation** - Auto-updates on changes
