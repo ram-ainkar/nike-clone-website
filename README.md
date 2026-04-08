@@ -200,5 +200,4 @@ A cinematic, Nike-inspired e-commerce website with shopping cart, checkout, admi
 
 ### Product Cards
 - Stock indicator - "Out of Stock" badge
-- Sale badge - Percentage discount
--  ating. .        
+- Sale badge - Percentage discount    
